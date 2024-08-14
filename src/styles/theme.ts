@@ -18,6 +18,7 @@ export const getDesignTokens = (mode: Mode) => {
         white40: '#ffffff66',
         white60: '#ffffff99',
         black: '#000000',
+        black05: '#0000000d',
         black10: '#0000001a',
         black60: '#00000099',
         muted: '#00000040',
@@ -32,6 +33,11 @@ export const getDesignTokens = (mode: Mode) => {
         main: getColor('#ffca02', ''),
         hover: getColor('#ffca0299', ''),
         contrast: getColor('#000000', ''),
+      },
+      info: {
+        main: getColor('#4dd0e2', ''),
+        hover: getColor('#4dd0e299', ''),
+        contrast: getColor('#ffffff', ''),
       },
       danger: {
         main: getColor('#ff5a58', ''),
@@ -50,6 +56,9 @@ export const getDesignTokens = (mode: Mode) => {
       border: {
         main: getColor('#000000', ''),
       },
+    },
+    boxShadow: {
+      main: 'inset 0 -4px 0 0 #00000040',
     },
     typography: {
       bold12: {

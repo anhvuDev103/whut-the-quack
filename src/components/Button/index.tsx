@@ -3,7 +3,7 @@ import { ButtonProps, VARIANTS } from './types';
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  variant,
+  variant = VARIANTS.SUCCESS,
   loading,
   disabled,
   ...props
@@ -17,10 +17,6 @@ const Button: React.FC<ButtonProps> = ({
       <div className='ButtonLabel'>{children}</div>
     </ButtonFrame>
   );
-};
-
-Button.defaultProps = {
-  variant: VARIANTS.SUCCESS,
 };
 
 export default Button;

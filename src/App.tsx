@@ -1,38 +1,41 @@
-import './App.css';
-
-import { useState } from 'react';
-
-import viteLogo from '/vite.svg';
-
-import reactLogo from './assets/react.svg';
+import Chart from '@modules/Chart';
+import Operation from '@modules/Operation';
+import Results from '@modules/Results';
+import Tree from '@modules/Tree';
+import ModalProvider from '@providers/Modal';
+import { ToastContainer } from 'react-toastify';
+import styled from 'styled-components';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
+      <ModalProvider>
+        <MainApp>
+          <Tree />
+          <Chart />
+          <Results />
+          <Operation />
+        </MainApp>
+      </ModalProvider>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={true}
+        theme='dark'
+      />
     </>
   );
 }
+
+const MainApp = styled.main`
+  height: 100%;
+  padding: 24px 12px 12px;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: minmax(auto, 340px) 1fr;
+  grid-template-rows: repeat(2, min-content) 1fr;
+  gap: 24px;
+`;
 
 export default App;

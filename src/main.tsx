@@ -1,5 +1,4 @@
-import './index.css';
-
+import GlobalStyle from '@styles/GlobalStyles.ts';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
@@ -11,6 +10,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={getDesignTokens('light')}>
       <App />
+      <GlobalStyle />
     </ThemeProvider>
   </StrictMode>,
 );
